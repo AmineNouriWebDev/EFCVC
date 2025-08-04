@@ -1,9 +1,1227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="Artisan frigoriste spécialiste en froid industriel, groupes d'eau glacée et climatisation en Gironde (33). Installation, maintenance et dépannage professionnel."
+    />
+    <meta
+      name="keywords"
+      content="frigoriste, froid industriel, climatisation, groupe eau glacée, dépannage froid, Gironde, artisan froid"
+    />
+    <meta name="author" content="EFCVC" />
+    <title>
+      Artisan Frigoriste - Expert en Froid Industriel et Climatisation | Gironde
+      (33)
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e3a8a",
+              secondary: "#dc2626",
+              accent: "#0284c7",
+              dark: "#0f172a",
+              light: "#f8fafc",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: #f8fafc;
+      }
+
+      .section {
+        min-height: 100vh;
+        padding: 6rem 1.5rem;
+      }
+
+      .hero-gradient {
+        background: radial-gradient(
+            circle at top right,
+            rgba(30, 58, 138, 0.5),
+            rgba(2, 132, 199, 0.3),
+            rgba(15, 23, 42, 0.8)
+          ),
+          radial-gradient(
+            circle at bottom left,
+            rgba(220, 38, 38, 0.4),
+            rgba(15, 23, 42, 0.8)
+          );
+      }
+
+      .frosted-glass {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .tech-grid {
+        background-image: radial-gradient(
+            circle at center,
+            rgba(30, 58, 138, 0.1) 0%,
+            transparent 70%
+          ),
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 7px,
+            rgba(2, 132, 199, 0.1) 7px,
+            rgba(2, 132, 199, 0.1) 8px
+          );
+      }
+
+      .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px) rotateX(5deg);
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+      }
+
+      .gallery-item {
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.03);
+      }
+
+      .nav-indicator {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .indicator-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .indicator-dot.active {
+        background: #dc2626;
+        transform: scale(1.2);
+      }
+
+      .indicator-dot::after {
+        content: attr(data-section);
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(30, 58, 138, 0.9);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .indicator-dot:hover::after {
+        opacity: 1;
+      }
+
+      .contact-input {
+        background: rgba(30, 41, 59, 0.6);
+        border: 1px solid rgba(100, 116, 139, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .contact-input:focus {
+        border-color: #0284c7;
+        box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.3);
+      }
+
+      .floating-btn {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+        }
+      }
+
+      .hamburger {
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu {
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .mobile-menu.active {
+        transform: translateX(0);
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 5rem 1rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body class="relative">
+    <!-- Navigation -->
+    <nav class="fixed w-full py-4 px-6 z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center mr-3"
+          >
+            <i class="fas fa-snowflake text-white"></i>
+          </div>
+          <span class="text-xl font-bold text-white font-heading"
+            >Frigo<span class="text-secondary">Expert</span></span
+          >
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#accueil" class="text-white hover:text-accent transition"
+            >Accueil</a
+          >
+          <a
+            href="#presentation"
+            class="text-white hover:text-accent transition"
+            >Présentation</a
+          >
+          <a href="#services" class="text-white hover:text-accent transition"
+            >Services</a
+          >
+          <a
+            href="#realisations"
+            class="text-white hover:text-accent transition"
+            >Réalisations</a
+          >
+          <a href="#contact" class="text-white hover:text-accent transition"
+            >Contact</a
+          >
+        </div>
+
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed inset-y-0 right-0 w-64 bg-dark z-50 p-8 shadow-2xl"
+    >
+      <div class="flex justify-end mb-10">
+        <button id="close-menu" class="text-white text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-6">
+        <a
+          href="#accueil"
+          class="text-white text-xl py-2 border-b border-gray-700 hover:text-accent transition"
+          >Accueil</a
+        >
+        <a
+          href="#presentation"
+          class="text-white text-xl py-2 border-b border-gray-700 hover:text-accent transition"
+          >Présentation</a
+        >
+        <a
+          href="#services"
+          class="text-white text-xl py-2 border-b border-gray-700 hover:text-accent transition"
+          >Services</a
+        >
+        <a
+          href="#realisations"
+          class="text-white text-xl py-2 border-b border-gray-700 hover:text-accent transition"
+          >Réalisations</a
+        >
+        <a
+          href="#contact"
+          class="text-white text-xl py-2 border-b border-gray-700 hover:text-accent transition"
+          >Contact</a
+        >
+      </div>
+      <div class="absolute bottom-8 left-8 right-8">
+        <div class="flex space-x-4">
+          <a
+            href="tel:0605859708"
+            class="bg-accent text-white p-3 rounded-full"
+          >
+            <i class="fas fa-phone"></i>
+          </a>
+          <a
+            href="mailto:contact@efcvc.com"
+            class="bg-primary text-white p-3 rounded-full"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://wa.me/33605859708"
+            class="bg-green-500 text-white p-3 rounded-full"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Indicator -->
+    <div class="nav-indicator">
+      <a
+        href="#accueil"
+        class="indicator-dot active"
+        data-section="Accueil"
+      ></a>
+      <a
+        href="#presentation"
+        class="indicator-dot"
+        data-section="Présentation"
+      ></a>
+      <a href="#services" class="indicator-dot" data-section="Services"></a>
+      <a
+        href="#realisations"
+        class="indicator-dot"
+        data-section="Réalisations"
+      ></a>
+      <a href="#contact" class="indicator-dot" data-section="Contact"></a>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      id="accueil"
+      class="section hero-gradient flex items-center relative overflow-hidden"
+    >
+      <div class="absolute inset-0 tech-grid"></div>
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="text-center lg:text-left">
+            <h1
+              class="text-5xl md:text-6xl font-bold mb-6 hero-title font-heading"
+            >
+              <span class="block text-white"
+                >Solutions <span class="text-accent">Frigorifiques</span></span
+              >
+              <span class="block text-white mt-2"
+                >pour l'<span class="text-secondary">Industrie</span></span
+              >
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+              Artisan frigoriste expert en froid industriel, groupes d'eau
+              glacée et climatisation en Gironde. Installation, maintenance et
+              dépannage 24/7.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="#contact"
+                class="bg-secondary hover:bg-red-600 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105"
+              >
+                Demander un devis
+              </a>
+              <a
+                href="tel:0605859708"
+                class="border-2 border-accent text-white font-bold py-3 px-8 rounded-full transition hover:bg-accent/20"
+              >
+                <i class="fas fa-phone mr-2"></i>06.05.85.97.08
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="frosted-glass p-1 rounded-2xl">
+              <div class="bg-gray-800 rounded-2xl overflow-hidden">
+                <div
+                  class="aspect-video bg-gray-700 rounded-xl flex items-center justify-center"
+                >
+                  <i class="fas fa-snowflake text-6xl text-accent"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-secondary opacity-20 blur-xl"
+            ></div>
+            <div
+              class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-accent opacity-20 blur-xl"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a href="#presentation" class="text-white">
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Présentation Section -->
+    <section id="presentation" class="section relative">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 font-heading">
+            Expertise <span class="text-accent">Frigorifique</span>
+          </h2>
+          <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Artisan frigoriste spécialisé dans le froid industriel, les groupes
+            d'eau glacée et la climatisation pour les professionnels et les
+            particuliers en Gironde.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="frosted-glass p-8 rounded-2xl">
+            <div class="text-accent text-4xl mb-4">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Qualité Professionnelle</h3>
+            <p class="text-gray-300">
+              Avec plus de 15 ans d'expérience, nous garantissons des
+              prestations de qualité respectant les normes en vigueur.
+            </p>
+          </div>
+
+          <div class="frosted-glass p-8 rounded-2xl">
+            <div class="text-accent text-4xl mb-4">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Réactivité</h3>
+            <p class="text-gray-300">
+              Intervention rapide 24h/24 et 7j/7 en cas d'urgence pour minimiser
+              vos pertes et perturbations.
+            </p>
+          </div>
+
+          <div class="frosted-glass p-8 rounded-2xl">
+            <div class="text-accent text-4xl mb-4">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Solutions Sur Mesure</h3>
+            <p class="text-gray-300">
+              Des installations adaptées à vos besoins spécifiques et à votre
+              secteur d'activité (industrie, commerce, médical).
+            </p>
+          </div>
+        </div>
+
+        <div class="frosted-glass mt-16 p-8 rounded-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-3xl font-bold mb-4 font-heading">
+                Notre <span class="text-secondary">Engagement</span>
+              </h3>
+              <p class="text-gray-300 mb-6">
+                En tant qu'artisan frigoriste, notre mission est de garantir le
+                bon fonctionnement de vos équipements frigorifiques et
+                climatisation. Nous intervenons pour l'installation, la
+                maintenance préventive et curative, ainsi que le dépannage
+                d'urgence.
+              </p>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                  <span>Attestation de capacité ADC Fluides</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                  <span>Assurance décennale</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                  <span>SIRET : 939 379 814 00014</span>
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition"
+              >
+                Contactez-nous <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+            <div class="relative">
+              <div
+                class="bg-gray-800 rounded-2xl overflow-hidden aspect-video flex items-center justify-center"
+              >
+                <i class="fas fa-tools text-6xl text-accent"></i>
+              </div>
+              <div
+                class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-secondary opacity-20 blur-xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section
+      id="services"
+      class="section relative bg-gradient-to-br from-dark to-primary/10"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 font-heading">
+            Nos <span class="text-accent">Services</span>
+          </h2>
+          <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Des solutions complètes en froid industriel, groupes d'eau glacée et
+            climatisation pour tous vos besoins.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="service-card frosty-glass rounded-2xl overflow-hidden">
+            <div class="relative">
+              <div
+                class="bg-gray-800 aspect-video flex items-center justify-center"
+              >
+                <i class="fas fa-industry text-6xl text-accent"></i>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-secondary text-white py-1 px-3 rounded-full text-sm font-bold"
+              >
+                Expertise
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3">Froid Industriel</h3>
+              <p class="text-gray-300 mb-4">
+                Installation et maintenance de centrales frigorifiques, meubles
+                froids, chambres froides et systèmes de congélation pour
+                l'industrie.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Centrales frigorifiques</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Chambres froides positives/négatives</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Systèmes de congélation</span>
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition"
+              >
+                Demander un devis <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card frosty-glass rounded-2xl overflow-hidden">
+            <div class="relative">
+              <div
+                class="bg-gray-800 aspect-video flex items-center justify-center"
+              >
+                <i class="fas fa-water text-6xl text-accent"></i>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-secondary text-white py-1 px-3 rounded-full text-sm font-bold"
+              >
+                Technologie
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3">Groupes d'Eau Glacée</h3>
+              <p class="text-gray-300 mb-4">
+                Installation, maintenance et dépannage de groupes d'eau glacée
+                (Trane, Carrier, Daikin, Hitachi) pour le refroidissement
+                industriel.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Installation neuve</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Maintenance préventive</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Optimisation énergétique</span>
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition"
+              >
+                Demander un devis <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card frosty-glass rounded-2xl overflow-hidden">
+            <div class="relative">
+              <div
+                class="bg-gray-800 aspect-video flex items-center justify-center"
+              >
+                <i class="fas fa-wind text-6xl text-accent"></i>
+              </div>
+              <div
+                class="absolute top-4 right-4 bg-secondary text-white py-1 px-3 rounded-full text-sm font-bold"
+              >
+                Confort
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3">Climatisation</h3>
+              <p class="text-gray-300 mb-4">
+                Solutions de climatisation pour professionnels et particuliers :
+                splits, multi-splits, systèmes gainables, VRV et rooftops.
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Climatisation résidentielle</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Climatisation commerciale</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                  <span>Systèmes VRV/DRV</span>
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition"
+              >
+                Demander un devis <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Réalisations Section -->
+    <section id="realisations" class="section relative">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 font-heading">
+            Nos <span class="text-accent">Réalisations</span>
+          </h2>
+          <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Découvrez nos projets récents en froid industriel, groupes d'eau
+            glacée et climatisation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Gallery items would go here -->
+          <a
+            href="https://source.unsplash.com/random/800x600/?refrigeration,industrial"
+            class="gallery-item glightbox"
+            data-gallery="gallery1"
+          >
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden aspect-square relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4"
+              >
+                <div>
+                  <h3 class="text-white font-bold text-lg">
+                    Installation froid industriel
+                  </h3>
+                  <p class="text-gray-300">Chambre froide - 150m³</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://source.unsplash.com/random/800x600/?chiller"
+            class="gallery-item glightbox"
+            data-gallery="gallery1"
+          >
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden aspect-square relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4"
+              >
+                <div>
+                  <h3 class="text-white font-bold text-lg">
+                    Groupe d'eau glacée
+                  </h3>
+                  <p class="text-gray-300">Installation Daikin - 350kW</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://source.unsplash.com/random/800x600/?air,conditioning"
+            class="gallery-item glightbox"
+            data-gallery="gallery1"
+          >
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden aspect-square relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4"
+              >
+                <div>
+                  <h3 class="text-white font-bold text-lg">
+                    Climatisation VRV
+                  </h3>
+                  <p class="text-gray-300">Bâtiment commercial - 1200m²</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://source.unsplash.com/random/800x600/?refrigeration,commercial"
+            class="gallery-item glightbox"
+            data-gallery="gallery1"
+          >
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden aspect-square relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4"
+              >
+                <div>
+                  <h3 class="text-white font-bold text-lg">
+                    Meuble frigorifique
+                  </h3>
+                  <p class="text-gray-300">Supermarché - 12 unités</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://source.unsplash.com/random/800x600/?cooling,system"
+            class="gallery-item glightbox"
+            data-gallery="gallery1"
+          >
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden aspect-square relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4"
+              >
+                <div>
+                  <h3 class="text-white font-bold text-lg">
+                    Système de refroidissement
+                  </h3>
+                  <p class="text-gray-300">Industrie agroalimentaire</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://source.unsplash.com/random/800x600/?hvac"
+            class="gallery-item glightbox"
+            data-gallery="gallery1"
+          >
+            <div
+              class="bg-gray-800 rounded-xl overflow-hidden aspect-square relative"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4"
+              >
+                <div>
+                  <h3 class="text-white font-bold text-lg">
+                    Climatisation centralisée
+                  </h3>
+                  <p class="text-gray-300">Bureaux - 25 postes</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center mt-16">
+          <a
+            href="#contact"
+            class="bg-accent hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 inline-flex items-center"
+          >
+            <i class="fas fa-calendar-alt mr-3"></i> Planifier un projet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="section relative bg-gradient-to-br from-dark to-primary/10"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 font-heading">
+            Nous <span class="text-accent">Contacter</span>
+          </h2>
+          <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Un projet, une question ou un besoin de dépannage ? Contactez-nous
+            pour une réponse rapide.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="frosted-glass p-8 rounded-2xl">
+            <h3 class="text-2xl font-bold mb-6">Informations de contact</h3>
+
+            <div class="space-y-6">
+              <div class="flex">
+                <div
+                  class="bg-primary w-12 h-12 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg">Adresse</h4>
+                  <p class="text-gray-300">
+                    01 Chemin de Jallepont<br />33320 Eysines, Gironde
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex">
+                <div
+                  class="bg-secondary w-12 h-12 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-phone text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg">Téléphone</h4>
+                  <p class="text-gray-300">06.05.85.97.08</p>
+                </div>
+              </div>
+
+              <div class="flex">
+                <div
+                  class="bg-accent w-12 h-12 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-envelope text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg">Email</h4>
+                  <p class="text-gray-300">contact@efcvc.com</p>
+                </div>
+              </div>
+
+              <div class="flex">
+                <div
+                  class="bg-gray-700 w-12 h-12 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-clock text-white"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg">Horaires</h4>
+                  <p class="text-gray-300">
+                    Lundi - Vendredi: 8h - 18h<br />
+                    Samedi: 9h - 12h<br />
+                    Urgences: 24h/24
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="font-bold text-lg mb-4">Suivez-nous</h4>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center transition"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center transition"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-gray-700 hover:bg-gray-600 w-10 h-10 rounded-full flex items-center justify-center transition"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="frosted-glass p-8 rounded-2xl">
+            <h3 class="text-2xl font-bold mb-6">Envoyez-nous un message</h3>
+
+            <form class="space-y-6">
+              <div>
+                <label class="block text-gray-300 mb-2">Nom complet</label>
+                <input
+                  type="text"
+                  class="contact-input w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-gray-300 mb-2">Email</label>
+                  <input
+                    type="email"
+                    class="contact-input w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-gray-300 mb-2">Téléphone</label>
+                  <input
+                    type="tel"
+                    class="contact-input w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-gray-300 mb-2">Service concerné</label>
+                <select
+                  class="contact-input w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                >
+                  <option>Froid industriel</option>
+                  <option>Groupes d'eau glacée</option>
+                  <option>Climatisation</option>
+                  <option>Autre demande</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-gray-300 mb-2">Message</label>
+                <textarea
+                  rows="5"
+                  class="contact-input w-full p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="bg-secondary hover:bg-red-600 text-white font-bold py-4 px-8 rounded-full transition transform hover:scale-105 w-full"
+              >
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800 py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-6">
+              <div
+                class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center mr-3"
+              >
+                <i class="fas fa-snowflake text-white"></i>
+              </div>
+              <span class="text-xl font-bold text-white font-heading"
+                >Frigo<span class="text-secondary">Expert</span></span
+              >
+            </div>
+            <p class="text-gray-400 mb-6">
+              Artisan frigoriste spécialiste en froid industriel, groupes d'eau
+              glacée et climatisation en Gironde (33).
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6">Liens rapides</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#accueil"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#presentation"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Présentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#realisations"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Réalisations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-accent transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6">Nos services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Froid industriel</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Groupes d'eau glacée</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Climatisation</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Maintenance préventive</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-accent transition"
+                  >Dépannage d'urgence</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6">Contact</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                <span>01 Chemin de Jallepont, 33320 Eysines</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-phone mt-1 mr-3 text-accent"></i>
+                <span>06.05.85.97.08</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-envelope mt-1 mr-3 text-accent"></i>
+                <span>contact@efcvc.com</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-id-card mt-1 mr-3 text-accent"></i>
+                <span>SIRET : 939 379 814 00014</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500"
+        >
+          <p>
+            &copy; 2025 FrigoExpert. Tous droits réservés. | Artisan frigoriste
+            en Gironde (33)
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/33605859708"
+      class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg z-40 floating-btn pulse"
+    >
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a
+      href="#accueil"
+      class="fixed bottom-24 right-6 bg-primary text-white p-4 rounded-full shadow-lg z-40 hover:bg-accent transition"
+    >
+      <i class="fas fa-arrow-up text-xl"></i>
+    </a>
+
+    <script>
+      // Initialize GLightbox
+      const lightbox = GLightbox({
+        selector: ".glightbox",
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const closeMenu = document.getElementById("close-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+
+      // Close menu when clicking a link
+      const menuLinks = document.querySelectorAll("#mobile-menu a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      });
+
+      // Section indicator
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-indicator a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").substring(1) === current) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Smooth scrolling for all links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
