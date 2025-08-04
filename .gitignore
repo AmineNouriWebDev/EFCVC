@@ -1,0 +1,27 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Folder-specific custom attributes
+Icon?
+._*
+
+# Spotlight search metadata
+.Spotlight-V100
+
+# Trash folder
+.Trashes
+
+# macOS folder view settings
+Desktop.ini
+Thumbs.db
+
+# macOS disk image metadata
+VolumeIcon.icns
+
+# Time Machine
+.backup
+
+# iCloud files
+*.icloud
