@@ -225,6 +225,59 @@
         transform: translateX(0);
       }
 
+      /* Animation des partenaires */
+      .partners-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+
+      .partners-scroll {
+        display: flex;
+        animation: scroll 20s linear infinite;
+      }
+
+      .partner-item {
+        flex: 0 0 auto;
+        margin: 0 20px;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Style FAQ */
+      .faq-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.5rem 0;
+      }
+
+      .faq-question {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        padding-top: 0;
+      }
+
+      .faq-answer.active {
+        max-height: 500px;
+        padding-top: 1rem;
+      }
+
       @media (max-width: 768px) {
         .section {
           padding: 5rem 1rem;
@@ -232,6 +285,10 @@
 
         .hero-title {
           font-size: 2.5rem;
+        }
+
+        .partners-scroll {
+          animation: scroll 30s linear infinite;
         }
       }
     </style>
@@ -260,6 +317,7 @@
           <a href="#services" class="text-white hover:text-accent transition"
             >Services</a
           >
+          <a href="#faq" class="text-white hover:text-accent transition">FAQ</a>
           <a
             href="#realisations"
             class="text-white hover:text-accent transition"
@@ -303,6 +361,11 @@
           href="#services"
           class="text-white text-xl py-2 border-b border-gray-700 hover:text-accent transition"
           >Services</a
+        >
+        <a
+          href="#faq"
+          class="text-white text-xl py-2 border-b border-gray-700 hover:text-accent transition"
+          >FAQ</a
         >
         <a
           href="#realisations"
@@ -352,6 +415,7 @@
         data-section="Présentation"
       ></a>
       <a href="#services" class="indicator-dot" data-section="Services"></a>
+      <a href="#faq" class="indicator-dot" data-section="FAQ"></a>
       <a
         href="#realisations"
         class="indicator-dot"
@@ -690,7 +754,112 @@
       </div>
     </section>
 
-    <!-- Réalisations Section -->
+    <!-- FAQ Section -->
+    <section
+      id="faq"
+      class="section relative bg-gradient-to-br from-primary/10 to-dark"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 font-heading">
+            Questions <span class="text-accent">Fréquentes</span>
+          </h2>
+          <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Trouvez les réponses aux questions les plus courantes sur nos
+            services.
+          </p>
+        </div>
+
+        <div class="frosted-glass p-8 rounded-2xl max-w-4xl mx-auto">
+          <div class="space-y-4">
+            <!-- Question 1 -->
+            <div class="faq-item">
+              <div class="faq-question">
+                <span
+                  >Quelle est la durée d'intervention moyenne pour une
+                  réparation d'urgence ?</span
+                >
+                <i class="fas fa-chevron-down text-accent"></i>
+              </div>
+              <div class="faq-answer text-gray-300">
+                <p>
+                  Pour la plupart des problèmes courants, nous intervenons dans
+                  les 2 à 4 heures suivant votre appel. Les réparations prennent
+                  généralement entre 1 et 3 heures selon la complexité du
+                  problème.
+                </p>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item">
+              <div class="faq-question">
+                <span
+                  >Proposez-vous des contrats de maintenance préventive ?</span
+                >
+                <i class="fas fa-chevron-down text-accent"></i>
+              </div>
+              <div class="faq-answer text-gray-300">
+                <p>
+                  Oui, nous proposons différents niveaux de contrats de
+                  maintenance adaptés à vos besoins : Basique (2 visites/an),
+                  Standard (4 visites/an) et Premium (6 visites/an + assistance
+                  prioritaire).
+                </p>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Quelle est la garantie sur vos installations ?</span>
+                <i class="fas fa-chevron-down text-accent"></i>
+              </div>
+              <div class="faq-answer text-gray-300">
+                <p>
+                  Toutes nos nouvelles installations bénéficient d'une garantie
+                  de 2 ans sur les pièces et la main d'œuvre. Les équipements
+                  premium bénéficient d'une extension à 3 ans.
+                </p>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Travaillez-vous avec des équipements spécifiques ?</span>
+                <i class="fas fa-chevron-down text-accent"></i>
+              </div>
+              <div class="faq-answer text-gray-300">
+                <p>
+                  Nous sommes spécialisés avec les marques leaders du marché :
+                  Daikin, Carrier, Trane, Hitachi, LG, Mitsubishi Electric. Nous
+                  pouvons également intervenir sur d'autres marques.
+                </p>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Proposez-vous des solutions écologiques ?</span>
+                <i class="fas fa-chevron-down text-accent"></i>
+              </div>
+              <div class="faq-answer text-gray-300">
+                <p>
+                  Absolument. Nous proposons des systèmes utilisant des
+                  réfrigérants à faible impact environnemental (R32, R290) et
+                  des solutions haute efficacité énergétique qui réduisent
+                  jusqu'à 40% la consommation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Réalisations Section -->
     <section id="realisations" class="section relative">
       <div class="max-w-7xl mx-auto px-4">
@@ -893,6 +1062,113 @@
           >
             <i class="fas fa-calendar-alt mr-3"></i> Planifier un projet
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partenaires Section -->
+    <section class="py-16 bg-gradient-to-br from-dark to-primary/10">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4 font-heading">
+            Nos <span class="text-accent">Partenaires</span>
+          </h2>
+          <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Nous collaborons avec les meilleures marques du secteur
+          </p>
+        </div>
+
+        <div class="partners-container">
+          <div class="partners-scroll">
+            <!-- Logo 1 -->
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-primary">DAIKIN</div>
+              </div>
+            </div>
+
+            <!-- Logo 2 -->
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-blue-800">CARRIER</div>
+              </div>
+            </div>
+
+            <!-- Logo 3 -->
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-red-600">TRANE</div>
+              </div>
+            </div>
+
+            <!-- Logo 4 -->
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-gray-800">HITACHI</div>
+              </div>
+            </div>
+
+            <!-- Logo 5 -->
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-pink-500">LG</div>
+              </div>
+            </div>
+
+            <!-- Logo 6 -->
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-red-500">MITSUBISHI</div>
+              </div>
+            </div>
+
+            <!-- Logo 7 -->
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-blue-500">PROFROID</div>
+              </div>
+            </div>
+
+            <!-- Répéter les logos pour l'effet de boucle -->
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-primary">DAIKIN</div>
+              </div>
+            </div>
+
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-blue-800">CARRIER</div>
+              </div>
+            </div>
+
+            <div class="partner-item">
+              <div
+                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
+              >
+                <div class="text-2xl font-bold text-red-600">TRANE</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1178,41 +1454,20 @@
           </div>
 
           <div>
-            <h4 class="text-lg font-bold text-white mb-6">Liens rapides</h4>
+            <h4 class="text-lg font-bold text-white mb-6">Liens utiles</h4>
             <ul class="space-y-3">
               <li>
                 <a
-                  href="#accueil"
+                  href="politique-de-confidentialite.html"
                   class="text-gray-400 hover:text-accent transition"
-                  >Accueil</a
+                  >Politique de confidentialité</a
                 >
               </li>
               <li>
                 <a
-                  href="#presentation"
+                  href="mentions-legales.html"
                   class="text-gray-400 hover:text-accent transition"
-                  >Présentation</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  class="text-gray-400 hover:text-accent transition"
-                  >Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#realisations"
-                  class="text-gray-400 hover:text-accent transition"
-                  >Réalisations</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  class="text-gray-400 hover:text-accent transition"
-                  >Contact</a
+                  >Mentions légales</a
                 >
               </li>
             </ul>
@@ -1291,9 +1546,17 @@
     <!-- WhatsApp Button -->
     <a
       href="https://wa.me/33605859708"
-      class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg z-40 floating-btn pulse"
+      class="fixed bottom-6 right-24 bg-green-500 text-white p-4 rounded-full shadow-lg z-40 floating-btn pulse"
     >
       <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Phone Button -->
+    <a
+      href="tel:0605859708"
+      class="fixed bottom-6 right-6 bg-secondary text-white p-4 rounded-full shadow-lg z-40 floating-btn pulse"
+    >
+      <i class="fas fa-phone text-2xl"></i>
     </a>
 
     <!-- Back to Top Button -->
@@ -1415,6 +1678,24 @@
       scrollBtn.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
+
+      // FAQ Accordion
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          answer.classList.toggle("active");
+
+          const icon = question.querySelector("i");
+          if (icon.classList.contains("fa-chevron-down")) {
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+          } else {
+            icon.classList.remove("fa-chevron-up");
+            icon.classList.add("fa-chevron-down");
+          }
+        });
+      });
+
       // Galeries de réalisations
       const galleries = {
         "froid-industriel": [
