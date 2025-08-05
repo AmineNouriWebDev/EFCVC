@@ -291,6 +291,40 @@
           animation: scroll 30s linear infinite;
         }
       }
+      /* Animation des partenaires */
+      .partners-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+
+      .partners-scroll {
+        display: flex;
+        animation: scroll 40s linear infinite;
+      }
+
+      .partner-item {
+        flex: 0 0 auto;
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .partners-scroll {
+          animation: scroll 60s linear infinite;
+        }
+      }
     </style>
   </head>
   <body class="relative">
@@ -978,7 +1012,7 @@
                   </div>
                 </div>
                 <img
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  src="./img/climatisation.webp"
                   alt="Climatisation"
                   class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
                 />
@@ -1083,96 +1117,218 @@
           <div class="partners-scroll">
             <!-- Logo 1 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-primary">DAIKIN</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/daikin.png"
+                    alt="Daikin"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             <!-- Logo 2 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-blue-800">CARRIER</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/carrier.png"
+                    alt="Carrier"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             <!-- Logo 3 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-red-600">TRANE</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/trane.png"
+                    alt="Trane"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             <!-- Logo 4 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-gray-800">HITACHI</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/hitachi.png"
+                    alt="Hitachi"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             <!-- Logo 5 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-pink-500">LG</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/lg.png"
+                    alt="LG"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             <!-- Logo 6 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-red-500">MITSUBISHI</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/amana.png"
+                    alt="Amana"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             <!-- Logo 7 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-blue-500">PROFROID</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/lennox.png"
+                    alt="Lennox"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             <!-- Répéter les logos pour l'effet de boucle -->
+            <!-- Logo 1 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-primary">DAIKIN</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/daikin.png"
+                    alt="Daikin"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
+            <!-- Logo 2 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-blue-800">CARRIER</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/carrier.png"
+                    alt="Carrier"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
 
+            <!-- Logo 3 -->
             <div class="partner-item">
-              <div
-                class="bg-white rounded-xl p-4 w-32 h-32 flex items-center justify-center"
-              >
-                <div class="text-2xl font-bold text-red-600">TRANE</div>
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/trane.png"
+                    alt="Trane"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Logo 4 -->
+            <div class="partner-item">
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/hitachi.png"
+                    alt="Hitachi"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Logo 5 -->
+            <div class="partner-item">
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/lg.png"
+                    alt="LG"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Logo 6 -->
+            <div class="partner-item">
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/mitsubishi.png"
+                    alt="Mitsubishi"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Logo 7 -->
+            <div class="partner-item">
+              <div class="flex items-center justify-center w-40 h-40">
+                <div
+                  class="bg-white rounded-full p-4 w-32 h-32 shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src="img/partners/profroid.png"
+                    alt="Profroid"
+                    class="w-24 h-24 object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- Contact Section -->
     <section
       id="contact"
@@ -1427,14 +1583,11 @@
                 class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center mr-3"
               >
                 <img
-                  src="img/logo.png"
+                  src="img/logo_final.png"
                   alt="Logo EFCVC"
-                  class="w-10 h-10 object-contain"
+                  class="w-12 h-12 md:w-16 md:h-16 object-contain"
                 />
               </div>
-              <span class="text-xl font-bold text-white font-heading"
-                >EFC<span class="text-secondary">VC</span></span
-              >
             </div>
             <p class="text-gray-400 mb-6">
               Artisan frigoriste spécialiste en froid industriel, groupes d'eau
@@ -1811,25 +1964,54 @@
         ],
         climatisation: [
           {
-            title: "Climatisation VRV",
-            description:
-              "Installation d'un système VRV pour un bâtiment commercial de 1200m²",
-            src: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            title: "Installation",
+            description: "gainables Hitach",
+            src: "./img/services/3/installation_gainables_Hitachi.png",
           },
           {
-            title: "Système multi-split",
-            description: "Installation résidentielle avec 5 unités intérieures",
-            src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            title: "Installation",
+            description: "multi-split hitachi",
+            src: "./img/services/3/installation_multi_split_hitachi.png",
           },
           {
-            title: "Climatisation gainable",
-            description: "Installation discrète pour un espace de bureau",
-            src: "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            title: "installation",
+            description: "Split Hitachi",
+            src: "./img/services/3/installation_split_hitachi.png",
           },
           {
-            title: "Rooftop commercial",
-            description: "Installation sur toiture pour un centre commercial",
-            src: "https://images.unsplash.com/photo-1560448204-6036103c1f79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+            title: "Installation",
+            description: "DRV Hitachi",
+            src: "./img/services/3/installation_DRV_Hitachi.png",
+          },
+          {
+            title: "Installation",
+            description: "DRV Hitachi",
+            src: "./img/services/3/installation_DRV_Hitachi2.png",
+          },
+          {
+            title: "Installation",
+            description: "Split",
+            src: "./img/services/3/installation_split.png",
+          },
+          {
+            title: "Installation",
+            description: "multi-splits Hitachi",
+            src: "./img/services/3/installation_multi_split_hitachi2.png",
+          },
+          {
+            title: "Installation",
+            description: "cassette laboratoire",
+            src: "./img/services/3/installation_cassette_laboratoire.png",
+          },
+          {
+            title: "Dépannage",
+            description: "VRV DAIKIN",
+            src: "./img/services/3/depannage_vrv_daikin.png",
+          },
+          {
+            title: "Entretien",
+            description: "bruleur Lennox",
+            src: "./img/services/3/entretien_bruleur_lennox.png",
           },
         ],
       };
@@ -1918,15 +2100,15 @@
           const thumbnail = document.createElement("div");
           thumbnail.className = "flex-shrink-0 cursor-pointer group";
           thumbnail.innerHTML = `
-      <img 
-        src="${image.src}" 
-        alt="${image.title}" 
-        class="w-24 h-24 object-cover rounded-lg border-2 border-transparent group-hover:border-accent transition ${
-          index === currentIndex ? "border-accent" : ""
-        }"
-        data-index="${index}"
-      >
-    `;
+        <img
+          src="${image.src}"
+          alt="${image.title}"
+          class="w-24 h-24 object-cover rounded-lg border-2 border-transparent group-hover:border-accent transition ${
+            index === currentIndex ? "border-accent" : ""
+          }"
+          data-index="${index}"
+        >
+      `;
 
           thumbnail.addEventListener("click", () => {
             currentIndex = index;
