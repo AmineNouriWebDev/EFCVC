@@ -58,150 +58,11 @@
         padding: 6rem 1.5rem;
       }
 
-      .hero-gradient {
-        background: radial-gradient(
-            circle at top right,
-            rgba(30, 58, 138, 0.5),
-            rgba(2, 132, 199, 0.3),
-            rgba(15, 23, 42, 0.8)
-          ),
-          radial-gradient(
-            circle at bottom left,
-            rgba(220, 38, 38, 0.4),
-            rgba(15, 23, 42, 0.8)
-          );
-      }
-
       .frosted-glass {
         background: rgba(15, 23, 42, 0.7);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .tech-grid {
-        background-image: radial-gradient(
-            circle at center,
-            rgba(30, 58, 138, 0.1) 0%,
-            transparent 70%
-          ),
-          repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 7px,
-            rgba(2, 132, 199, 0.1) 7px,
-            rgba(2, 132, 199, 0.1) 8px
-          );
-      }
-
-      .service-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        perspective: 1000px;
-        transform-style: preserve-3d;
-      }
-
-      .service-card:hover {
-        transform: translateY(-10px) rotateX(5deg);
-        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
-      }
-
-      .gallery-item {
-        border-radius: 12px;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-      }
-
-      .gallery-item:hover {
-        transform: scale(1.03);
-      }
-
-      .nav-indicator {
-        position: fixed;
-        right: 30px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .indicator-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        position: relative;
-      }
-
-      .indicator-dot.active {
-        background: #dc2626;
-        transform: scale(1.2);
-      }
-
-      .indicator-dot::after {
-        content: attr(data-section);
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(30, 58, 138, 0.9);
-        color: white;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-size: 12px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-      }
-
-      .indicator-dot:hover::after {
-        opacity: 1;
-      }
-
-      .contact-input {
-        background: rgba(30, 41, 59, 0.6);
-        border: 1px solid rgba(100, 116, 139, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      .contact-input:focus {
-        border-color: #0284c7;
-        box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.3);
-      }
-
-      .floating-btn {
-        animation: float 3s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-
-      .pulse {
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
-        }
-        70% {
-          box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
-        }
       }
 
       .hamburger {
@@ -217,77 +78,18 @@
         transform: translateX(0);
       }
 
-      /* Animation des partenaires */
-      .partners-container {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-      }
-
-      .partners-scroll {
-        display: flex;
-        animation: scroll 20s linear infinite;
-      }
-
-      .partner-item {
-        flex: 0 0 auto;
-        margin: 0 20px;
-      }
-
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      /* Style FAQ */
-      .faq-item {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 1.5rem 0;
-      }
-
-      .faq-question {
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
-        font-size: 1.1rem;
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        padding-top: 0;
-      }
-
-      .faq-answer.active {
-        max-height: 500px;
-        padding-top: 1rem;
-      }
-
       @media (max-width: 768px) {
         .section {
           padding: 5rem 1rem;
-        }
-
-        .hero-title {
-          font-size: 2.5rem;
-        }
-
-        .partners-scroll {
-          animation: scroll 30s linear infinite;
         }
       }
     </style>
   </head>
   <body class="relative">
     <!-- Navigation -->
-    <nav class="w-full py-2 px-6 z-50 transition-all duration-300">
+    <nav
+      class="w-full py-2 px-6 z-50 transition-all duration-300 fixed bg-dark/90 backdrop-blur-sm"
+    >
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center">
           <img
@@ -295,6 +97,9 @@
             alt="Logo EFCVC"
             class="w-12 h-12 md:w-16 md:h-16 object-contain"
           />
+          <span class="text-xl font-bold text-white font-heading ml-3"
+            >EFC<span class="text-secondary">VC</span></span
+          >
         </div>
 
         <div class="hidden md:flex items-center space-x-8">
@@ -404,7 +209,7 @@
       </div>
     </div>
 
-    <section class="section relative">
+    <section class="section relative pt-24">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold mb-4 font-heading">Mentions légales</h2>
@@ -423,9 +228,14 @@
               Email : contact@efcvc.com
             </p>
 
+            <h3 class="text-2xl font-bold text-white mb-4 mt-8">
+              Directeur de publication
+            </h3>
+            <p>Erwan Fichou</p>
+
             <h3 class="text-2xl font-bold text-white mb-4 mt-8">Hébergeur</h3>
             <p>
-              Nom de l'hébergeur: hostinger<br />
+              Nom de l'hébergeur: Hostinger<br />
               Adresse de l'hébergeur: Švitrigailos str. 34, 03230 Vilnius,
               Lituanie<br />
               Téléphone : +370 645 03378
@@ -437,7 +247,11 @@
             <p>
               L'ensemble de ce site relève de la législation française et
               internationale sur le droit d'auteur et la propriété
-              intellectuelle.
+              intellectuelle. Toute reproduction ou représentation totale ou
+              partielle de ce site par quelque procédé que ce soit, sans
+              autorisation expresse de l'éditeur, est interdite et constituerait
+              une contrefaçon sanctionnée par les articles L.335-2 et suivants
+              du Code de la propriété intellectuelle.
             </p>
 
             <h3 class="text-2xl font-bold text-white mb-4 mt-8">
@@ -447,6 +261,19 @@
               Conformément à la loi "Informatique et Libertés" du 6 janvier
               1978, vous disposez d'un droit d'accès, de rectification et
               d'opposition aux données personnelles vous concernant.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white mb-4 mt-8">
+              Responsabilité
+            </h3>
+            <p>
+              Les informations contenues sur ce site sont aussi précises que
+              possible et le site est périodiquement remis à jour, mais peut
+              toutefois contenir des inexactitudes, des omissions ou des
+              lacunes. Si vous constatez une lacune, erreur ou ce qui parait
+              être un dysfonctionnement, merci de bien vouloir le signaler par
+              email en décrivant le problème de la manière la plus précise
+              possible.
             </p>
           </div>
         </div>
@@ -511,27 +338,37 @@
             <h4 class="text-lg font-bold text-white mb-6">Nos services</h4>
             <ul class="space-y-3">
               <li>
-                <a href="#" class="text-gray-400 hover:text-accent transition"
+                <a
+                  href="index.html#services"
+                  class="text-gray-400 hover:text-accent transition"
                   >Froid industriel</a
                 >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-accent transition"
+                <a
+                  href="index.html#services"
+                  class="text-gray-400 hover:text-accent transition"
                   >Groupes d'eau glacée</a
                 >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-accent transition"
+                <a
+                  href="index.html#services"
+                  class="text-gray-400 hover:text-accent transition"
                   >Climatisation</a
                 >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-accent transition"
+                <a
+                  href="index.html#services"
+                  class="text-gray-400 hover:text-accent transition"
                   >Maintenance préventive</a
                 >
               </li>
               <li>
-                <a href="#" class="text-gray-400 hover:text-accent transition"
+                <a
+                  href="index.html#services"
+                  class="text-gray-400 hover:text-accent transition"
                   >Dépannage d'urgence</a
                 >
               </li>
@@ -576,5 +413,32 @@
         </div>
       </div>
     </footer>
+
+    <!-- Ajout du script manquant pour le menu mobile -->
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const closeMenu = document.getElementById("close-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+
+      // Close menu when clicking a link
+      const menuLinks = document.querySelectorAll("#mobile-menu a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      });
+    </script>
   </body>
 </html>
