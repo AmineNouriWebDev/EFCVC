@@ -322,21 +322,30 @@
 
       @media (max-width: 768px) {
         .partners-scroll {
-          animation: scroll 20s linear infinite; /* Plus rapide (20s au lieu de 60s) */
+          animation: scroll 10s linear infinite; /* Défilement plus rapide */
         }
 
         .partner-item {
-          margin: 0 10px; /* Espacement réduit */
+          margin: 0 15px; /* Espacement réduit */
         }
 
-        .partner-item div {
-          width: 24px !important; /* Conteneur plus petit */
-          height: 24px !important;
+        /* Taille des conteneurs de logo */
+        .partner-item > div {
+          width: 80px !important;
+          height: 80px !important;
         }
 
+        /* Taille des cercles blancs */
+        .partner-item .bg-white {
+          width: 60px !important;
+          height: 60px !important;
+          padding: 10px !important;
+        }
+
+        /* Taille des images de logo */
         .partner-item img {
-          width: 20px !important; /* Logo plus petit */
-          height: 20px !important;
+          width: 50px !important;
+          height: 50px !important;
         }
       }
     </style>
@@ -349,7 +358,7 @@
           <img
             src="img/logo_final.png"
             alt="Logo EFCVC"
-            class="w-12 h-12 md:w-16 md:h-16 object-contain"
+            class="w-16 h-16 md:w-20 md:h-20 object-contain"
           />
         </div>
 
