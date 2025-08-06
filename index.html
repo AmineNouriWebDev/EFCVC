@@ -322,7 +322,21 @@
 
       @media (max-width: 768px) {
         .partners-scroll {
-          animation: scroll 60s linear infinite;
+          animation: scroll 20s linear infinite; /* Plus rapide (20s au lieu de 60s) */
+        }
+
+        .partner-item {
+          margin: 0 10px; /* Espacement réduit */
+        }
+
+        .partner-item div {
+          width: 24px !important; /* Conteneur plus petit */
+          height: 24px !important;
+        }
+
+        .partner-item img {
+          width: 20px !important; /* Logo plus petit */
+          height: 20px !important;
         }
       }
     </style>
