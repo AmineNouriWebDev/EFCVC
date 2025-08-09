@@ -26,6 +26,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
     />
+    <!-- === ADD (HEAD) : Swiper CSS + preconnect (paste inside <head>) === -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- End ADD -->
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <script>
       tailwind.config = {
@@ -388,6 +395,130 @@
         color: #0284c7;
         text-shadow: 0 0 8px rgba(2, 132, 199, 0.5);
       }
+      /* === Hero Swiper amélioré === */
+      .hero-swiper-wrap {
+        width: 100%;
+        height: 70vh; /* plus grand sur desktop */
+        position: relative;
+      }
+
+      .hero-swiper-wrap .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-swiper-wrap .swiper-slide {
+        position: relative;
+      }
+
+      .hero-slide-media {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        filter: brightness(0.85) contrast(1.05) saturate(1.15);
+        transition: transform 0.5s ease;
+      }
+
+      .hero-slide-media:hover {
+        transform: scale(1.03);
+      }
+
+      /* Overlay dégradé pour le texte */
+      .hero-slide-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.2) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        );
+        border-radius: 12px;
+      }
+
+      /* Contenu texte + CTA */
+      .hero-slide-content {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 10;
+        color: #fff;
+        max-width: 500px;
+      }
+
+      .hero-slide-content h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-price {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fbbf24; /* or secondary color */
+        margin-bottom: 1rem;
+      }
+
+      /* Boutons */
+      .hero-slide-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .hero-btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 999px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .hero-btn-primary {
+        background: #dc2626;
+        color: white;
+      }
+
+      .hero-btn-primary:hover {
+        background: #b91c1c;
+      }
+
+      .hero-btn-secondary {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: white;
+      }
+
+      .hero-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-swiper-wrap {
+          height: 50vh;
+        }
+        .hero-slide-content h3 {
+          font-size: 1.5rem;
+        }
+      }
+      /* Barre de progression du carousel */
+      .hero-carousel-progress {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.15);
+        z-index: 20;
+      }
+
+      .hero-carousel-progress .progress-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #dc2626, #0284c7);
+        box-shadow: 0 0 10px rgba(2, 132, 199, 0.3);
+        transition: width 0.1s linear;
+      }
     </style>
   </head>
   <body class="relative">
@@ -561,28 +692,107 @@
               </a>
             </div>
           </div>
+          <!-- === REPLACE THIS BLOCK (replace the existing <div class="relative"> ... that contains the single <img>) === -->
           <div class="relative">
             <div class="frosted-glass p-1 rounded-2xl">
               <div class="bg-gray-800 rounded-2xl overflow-hidden">
-                <div
-                  class="aspect-video bg-gray-700 rounded-xl flex items-center justify-center"
-                >
-                  <img
-                    src="img/materiel-frigorifique.jpg"
-                    alt="Matériel frigorifique"
-                    class="w-full h-full object-cover rounded-xl shadow-xl filter brightness-90 contrast-110 saturate-150 hover:brightness-100 hover:contrast-125 hover:saturate-200 transition duration-300"
-                    style="filter: brightness(0.9) contrast(1.1) saturate(1.5)"
-                  />
+                <div class="hero-swiper-wrap">
+                  <div class="swiper heroSwiper">
+                    <div class="swiper-wrapper">
+                      <!-- Slide 1 -->
+                      <div class="swiper-slide">
+                        <img
+                          src="img/materiel-frigorifique.jpg"
+                          alt="Matériel frigorifique"
+                          class="hero-slide-media"
+                        />
+                        <div class="hero-slide-overlay"></div>
+                        <div class="hero-slide-content">
+                          <h3>Matériel frigorifique professionnel</h3>
+                          <div class="hero-price">À partir de 2990€</div>
+                          <div class="hero-slide-buttons">
+                            <a href="#contact" class="hero-btn hero-btn-primary"
+                              >Obtenir un devis</a
+                            >
+                            <a
+                              href="#services"
+                              class="hero-btn hero-btn-secondary"
+                              >En savoir plus</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 2 -->
+                      <div class="swiper-slide">
+                        <img
+                          src="img/groupe-eau-glacee.jpg"
+                          alt="Groupe eau glacée"
+                          class="hero-slide-media"
+                        />
+                        <div class="hero-slide-overlay"></div>
+                        <div class="hero-slide-content">
+                          <h3>Groupe d'eau glacée</h3>
+                          <div class="hero-price">À partir de 3990€</div>
+                          <div class="hero-slide-buttons">
+                            <a href="#contact" class="hero-btn hero-btn-primary"
+                              >Obtenir un devis</a
+                            >
+                            <a
+                              href="#services"
+                              class="hero-btn hero-btn-secondary"
+                              >En savoir plus</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Slide 3 -->
+                      <div class="swiper-slide">
+                        <img
+                          src="img/artisan-frigorifique.png"
+                          alt="Artisan frigorifique"
+                          class="hero-slide-media"
+                        />
+                        <div class="hero-slide-overlay"></div>
+                        <div class="hero-slide-content">
+                          <h3>Installation & Maintenance</h3>
+                          <div class="hero-price">Sur devis</div>
+                          <div class="hero-slide-buttons">
+                            <a href="#contact" class="hero-btn hero-btn-primary"
+                              >Obtenir un devis</a
+                            >
+                            <a
+                              href="#services"
+                              class="hero-btn hero-btn-secondary"
+                              >En savoir plus</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                  </div>
+                  <!-- Barre de progression -->
+                  <div class="hero-carousel-progress">
+                    <div
+                      class="progress-bar"
+                      id="progress-bar"
+                      style="width: 0%"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div
-              class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-secondary opacity-20 blur-xl"
-            ></div>
-            <div
-              class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-accent opacity-20 blur-xl"
-            ></div>
           </div>
+
+          <!-- === END REPLACE === -->
         </div>
       </div>
       <div
@@ -2348,5 +2558,36 @@
         }
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".heroSwiper", {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        on: {
+          autoplayTimeLeft(s, time, progress) {
+            const bar = document.getElementById("progress-bar");
+            if (bar) {
+              bar.style.width = (1 - progress) * 100 + "%";
+            }
+          },
+          slideChange() {
+            const bar = document.getElementById("progress-bar");
+            if (bar) bar.style.width = "0%";
+          },
+        },
+      });
+    </script>
+    <!-- === END ADD JS === -->
   </body>
 </html>
